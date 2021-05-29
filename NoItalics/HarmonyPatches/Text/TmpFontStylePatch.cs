@@ -4,7 +4,7 @@ using TMPro;
 namespace NoItalics.HarmonyPatches.Text
 {
 	[HarmonyPatch(typeof(TMP_Text))]
-	[HarmonyPatch("fontStyle", MethodType.Setter)]
+	[HarmonyPatch(nameof(TMP_Text.fontStyle), MethodType.Setter)]
 	internal class TmpFontStylePatch
 	{
 		internal static void Prefix(ref FontStyles value)
