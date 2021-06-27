@@ -23,11 +23,11 @@ jobs:
                   FILES_URL: ${{ secrets.BSFILES_URL }}
               run: wget --no-check-certificate "$FILES_URL" -q -O bsfiles.zip
             - name: ExtractRefs
-              run: unzip -q -n bsfiles.zip -d ./Refs
+              run: unzip -q -n bsfiles.zip -d ${{github.workspace}}/Refs
             - name: Download Mod Dependencies
               uses: Goobwabber/download-beatmods-deps@1.1
               with:
-                  manifest: ./NoItalics/manifest.json
+                  manifest: ${{github.workspace}}/NoItalics/manifest.json
             - name: Build
               id: Build
               env:
