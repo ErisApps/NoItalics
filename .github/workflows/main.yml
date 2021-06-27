@@ -7,7 +7,7 @@ on:
         paths:
             - 'NoItalics.sln'
             - 'NoItalics/**'
-            - '.github/workflows/Build.yml'
+            - '.github/workflows/main.yml'
 
 jobs:
     Build:
@@ -18,8 +18,6 @@ jobs:
               uses: actions/setup-dotnet@v1
               with:
                   dotnet-version: 5.0.x
-            - name: Echo Filename
-              run: ls ${{github.workspace}}
             - name: GetStrippedRefs
               env:
                   FILES_URL: ${{ secrets.BSFILES_URL }}
@@ -29,7 +27,7 @@ jobs:
             - name: Download Mod Dependencies
               uses: Goobwabber/download-beatmods-deps@1.1
               with:
-                  manifest: ${{github.workspace}}/manifest.json
+                  manifest: ${{github.workspace}}/NoItalics/manifest.json
             - name: Build
               id: Build
               env:
