@@ -33,7 +33,7 @@ namespace NoItalics
 		// ReSharper disable once UnusedMember.Global
 		public void OnDisable()
 		{
-			_harmonyInstance?.UnpatchAll(HARMONY_ID);
+			_harmonyInstance?.UnpatchSelf();
 			_harmonyInstance = null;
 		}
 	}
