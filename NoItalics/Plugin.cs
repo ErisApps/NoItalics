@@ -23,11 +23,7 @@ namespace NoItalics
 
 		[OnEnable]
 		// ReSharper disable once UnusedMember.Global
-		public void OnEnable()
-		{
-			_harmonyInstance = new Harmony(HARMONY_ID);
-			_harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
-		}
+		public void OnEnable() => _harmonyInstance = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), HARMONY_ID);
 
 		[OnDisable]
 		// ReSharper disable once UnusedMember.Global
