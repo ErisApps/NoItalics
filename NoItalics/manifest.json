@@ -4,7 +4,7 @@
 	"name": "NoItalics",
 	"description": "A small mod that unslants all text and images in-game.",
 	"author": "Eris",
-	"gameVersion": "1.18.0",
+	"gameVersion": "1.18.3",
 	"version": "0.1.4",
 	"dependsOn": {
 		"BSIPA": "^4.2.0"
